@@ -52,6 +52,13 @@ const viewFunc = (data) => {
     
     createElemClass('h5', `${data.birthday}`, viewBirth[index], 'class', 'view-birth-h5');
     createElemClass('h5', `${data.work}`, viewWork[index], 'class', 'view-work-h5');
+
+    aBtn = document.createElement("a");
+    aBtn.setAttribute("class", "a-btn");
+    aBtn.innerText = "Edit Content";
+    aBtn.href = `/card${index}`;
+    viewDiv2[index].appendChild(aBtn);
+
     index++
 }
 

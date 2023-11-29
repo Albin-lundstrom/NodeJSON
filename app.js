@@ -1,7 +1,6 @@
 const express = require('express'),
       fs = require('fs')
 
-// process.argv[2]
 
 const writeJSON = () => {
     if(fs.existsSync(`test.json`) == true){

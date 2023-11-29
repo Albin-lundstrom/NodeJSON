@@ -17,18 +17,15 @@ const UrlTest = (str) => /^\d+$/.test(str);
 fetch("/jsonfile", { method:'GET' })
 .then(res => res.json())
 .then(data => viewFunc(data));
-
-viewBody = document.getElementById('view-body');
-const viewFunc = (data) => {
-    data = data.users;
-    let url = window.location.href;
-    url = url.slice(26);
-    console.log(UrlTest(url));
-    console.log(data[1])
+let url = window.location.href;
+url = url.slice(26);
     if(UrlTest(url) == true){
         url = Number(url);
         index = url;
     }
+viewBody = document.getElementById('view-body');
+const viewFunc = (data) => {
+    data = data.users;
     createElemClass('div', '', viewBody, 'class', 'view-div');
     viewDiv = document.getElementsByClassName('view-div');
 
@@ -58,3 +55,6 @@ const viewFunc = (data) => {
     createElemClass('h5', `${data[index].birthday}`, viewBirth[0], 'class', 'view-birth-h5');
     createElemClass('h5', `${data[index].work}`, viewWork[0], 'class', 'view-work-h5');
 }
+
+cardForm = document.getElementById('card-form');
+cardForm.action = `/card${index}`

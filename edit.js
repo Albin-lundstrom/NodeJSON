@@ -15,6 +15,4 @@ function createElemClass(elem_name, elem_text, parent_elem, elem_class, elem_cla
 
 index = 0;
 editDiv = document.getElementsByClassName('editDiv');
-aBtn = document.getElementById('a-btn');
-console.log(aBtn);
-aBtn.href = `/card${index}`
+
