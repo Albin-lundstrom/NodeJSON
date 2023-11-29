@@ -3,15 +3,14 @@
 <head>
  <meta charset="utf-8">
  <title>Home page</title>
- <script src="./app.js" defer></script>
 </head>
-<form action="" method="POST">  
-  First Name: <input type="text" name="first_name">  <br>  
-  Last Name: <input type="text" name="last_name">  <br>
-  Username: <input type="text" name="username">  <br>  
-  Birthday: <input type="date" name="birthday">  <br>
-  Work: <input type="text" name="work">  <br>  
-  Img: <input type="file" name="img">  
-  <input type="submit" value="Submit">  
-</form>  
+<form action="/createUser" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; width: 400px;">
+  <input type="text" name="firstname" id="firstname" placeholder="Firstname">
+  <input type="text" name="lastname" id="lastname" placeholder="Lastname">
+  <input type="text" name="username" id="username_input" placeholder="Username">
+  <input type="date" name="birthday" id="date_input" placeholder="Birthday">
+  <input type="file" name="image" id="file_input" accept=".jpg, .jpeg, .png">
+  <input type="text" name="profession" id="profession_input" placeholder="Profession">
+  <input type="submit" value="Submit">
+</form>
 </html>
