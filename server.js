@@ -13,7 +13,6 @@ const upload = multer({ dest: 'img/' });
 const data = fs.readFileSync(`test.json`, 'utf8')
 let file = JSON.parse(data);
 
-// Create application/x-www-form-urlencoded parser  
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended : true })); 
@@ -70,22 +69,15 @@ app.post('/card:id', upload.single('image'), (req, res) => {
          work:req.body.profession,
          img:image,
       };
-      console.log("    ---------     ")
-      console.log("    ---------     ")
-      console.log("    ---------     ")
-      console.log(fileEdit)
+    
       for(var i = 0; i < Object.values(req.body).length; i++){
          if(Object.values(req.body)[i] != ''){
             fileEdit[Object.keys(fileEdit)[i]] = Object.values(req.body)[i];
-            console.log(fileEdit);
          }else{
             continue;
          }
       }
-      console.log("    ---------     ")
-      console.log("    ---------     ")
-      console.log("    ---------     ")
-      console.log(file)
+   
 
       fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
             if (err) return console.log(err);
@@ -98,7 +90,7 @@ app.post('/card:id', upload.single('image'), (req, res) => {
 app.get('/jsonfile', function (req, res) {  
    res.json(file);  
 })
-var server = app.listen(8000, function () {  
+var server = app.listen(8008, function () {  
   var host = server.address().address  
   var port = server.address().port  
   console.log("Example app listening at http://%s:%s", host, port)  

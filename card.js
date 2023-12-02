@@ -26,34 +26,36 @@ url = url.slice(26);
 viewBody = document.getElementById('view-body');
 const viewFunc = (data) => {
     data = data.users;
-    createElemClass('div', '', viewBody, 'class', 'view-div');
+    createElemClass('div', '', viewBody, 'class', 'view-div p-2 d-flex flex-column mb-3 card');
     viewDiv = document.getElementsByClassName('view-div');
 
-    createElemClass('div', '', viewDiv[0], 'class', 'view-div-1');
-    createElemClass('div', '', viewDiv[0], 'class', 'view-div-2');
+    createElemClass('div', '', viewDiv[0], 'class', 'view-div-1 p-2');
+    createElemClass('div', '', viewDiv[0], 'class', 'view-div-2 card-body p-2 d-flex flex-column');
+
     viewDiv1 = document.getElementsByClassName('view-div-1');
     viewDiv2 = document.getElementsByClassName('view-div-2');
     
     createElemClass('div', '', viewDiv1[0], 'class', 'view-img-div');
-    createElemClass('div', '', viewDiv1[0], 'class', 'view-names-div');
+    createElemClass('div', '', viewDiv1[0], 'class', 'view-names-div d-flex flex-column');
     viewImg = document.getElementsByClassName('view-img-div');
     viewNames = document.getElementsByClassName('view-names-div');
     
     viewImage = document.createElement("img");
-    viewImage.setAttribute("class", "view-icon");
+    viewImage.setAttribute("class", "view-icon card-img-top");
+    viewImage.style.width = "20rem";
     viewImage.src = `../img/${data[index].img}`
     viewImg[0].appendChild(viewImage);
-    createElemClass('div', `${data[index].username}`, viewNames[0], 'class', 'view-names-user');
-    createElemClass('div', `${data[index].first_name}`, viewNames[0], 'class', 'view-names-first');
-    createElemClass('div', `${data[index].last_name}`, viewNames[0], 'class', 'view-names-last');
+    createElemClass('div', `${data[index].username}`, viewNames[0], 'class', 'view-names-user card-title');
+    createElemClass('div', `${data[index].first_name}`, viewNames[0], 'class', 'view-names-first p-2"');
+    createElemClass('div', `${data[index].last_name}`, viewNames[0], 'class', 'view-names-last p-2"');
     
     createElemClass('div', '', viewDiv2[0], 'class', 'view-birthday');
     createElemClass('div', '', viewDiv2[0], 'class', 'view-work');
     viewBirth = document.getElementsByClassName('view-birthday');
     viewWork = document.getElementsByClassName('view-work');
     
-    createElemClass('h5', `${data[index].birthday}`, viewBirth[0], 'class', 'view-birth-h5');
-    createElemClass('h5', `${data[index].work}`, viewWork[0], 'class', 'view-work-h5');
+    createElemClass('h5', `${data[index].birthday}`, viewBirth[0], 'class', 'view-birth-h5 p-2"');
+    createElemClass('h5', `${data[index].work}`, viewWork[0], 'class', 'view-work-h5 p-2"');
 }
 
 cardForm = document.getElementById('card-form');
